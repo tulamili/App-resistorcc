@@ -6,7 +6,7 @@ use Term::ANSIColor qw[ :constants color ] ;
 $Term::ANSIColor::AUTORESET = 1 ; 
 
 use Getopt::Std ; 
-getopts '' , \my %o ; 
+getopts '=:' , \my %o ; 
 
 my @givecolor = map { color ( $_ ) } 
  ( 
@@ -16,8 +16,13 @@ my @givecolor = map { color ( $_ ) }
     'white', 'bold bright_white' # 8 9 
  ) ;
 
-while ( <> ) { 
+$o{'='} //= 1 if exists $o{'='} ; 
+$o{'='} //= 0 ;
+my $c = 0 ; # 行数のカウント
 
+while ( <> ) { 
+   $c ++ ; 
+   do { print "#" . $_ ; next } if $c <= $o{'='} ; 
 	$_ = decode_utf8 $_ ;
 	my @cha = split /([0-9]|\e\[[\d;]*m)/, $_ , -1 ;  # "\e" = "\x1b" 
 	#my @cha = split /([0-9])/, $_ , -1 ; 
@@ -75,8 +80,8 @@ sub HELP_MESSAGE {
  8 灰 
  9 白 → 明るい白(標準の白よりも明るい)
 
-オプション:  
-   まだ無し。
+オプション: このセクションでは N は数値を表す。
+   -= N : 先頭 N 行は、着色しない。
 
 利用例: 
    resistorcc --help | resistorcc  # このコマンドのヘルプの数値の部分のみが着色される
@@ -86,5 +91,6 @@ sub HELP_MESSAGE {
    * 8色を使い回している。256色が使える場合の指定が可能としたい。
    * このプログラムがutf8を前提にしていることは問題あるかも。
    * cat ?? | resistorcc | resistorcc のように2回重ねて実行してもレイアウトが崩れないようにしたが、バイト数がどんどん膨らむ。
+   * 入力行数、着色した行数、着色した文字の数をSTDERRに出力しても良いかも。
 
 =cut
