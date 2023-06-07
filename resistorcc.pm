@@ -1,6 +1,6 @@
 package App::resistorcc ;  
-our $VERSION = '0.052' ; 
-our $DATE = '2023-06-07T13:06+09:00' ; 
+our $VERSION = '0.053' ; 
+our $DATE = '2023-06-07T14:00+09:00' ; 
 
 =encoding utf8
 
@@ -39,6 +39,10 @@ This module provides a Unix-like command `F<resistorcc>'.
  Options : Not yet implemented.
 
  Reference: https://en.wikipedia.org/w/index.php?title=Electronic_color_code 
+
+=head1 OPTION
+
+  -= N ; skip coloring on the first N lines. 
 
 =head1 TRY
 
