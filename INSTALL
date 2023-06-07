@@ -1,0 +1,10 @@
+
+## INSTALL
+
+cpanm App::resistorcc
+
+
+## UNINSTALL 
+
+cpanm -U App::resistorcc
+
