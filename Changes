@@ -1,8 +1,8 @@
 
 Revision history for the module "App::resistorcc"
 
-0.052 : 2023-06-07T13:10  ; オプション -= を作ろうと思い、一個のライブラリにすることにした(https://metacpan.org/pod/Bin::Text::Color::Plus)。
-
+0.053 : 2023-06-07T14:00  ; -= を実装。
+0.052 : 2023-06-07T13:10  ; 一個のライブラリにすることにした(https://metacpan.org/pod/Bin::Text::Color::Plus)。
 ----- : 2021-05-26 ; Bin::Text::Color::Plus に一旦収録(他の2個のコマンドと共に)。   https://metacpan.org/pod/Bin::Text::Color::Plus
 
 
