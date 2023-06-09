@@ -1,6 +1,6 @@
 package App::resistorcc ;  
-our $VERSION = '0.053' ; 
-our $DATE = '2023-06-07T14:00+09:00' ; 
+our $VERSION = '0.054' ; 
+our $DATE = '2023-06-09T09:42+09:00' ; 
 
 =encoding utf8
 
